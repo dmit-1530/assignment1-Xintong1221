@@ -1,0 +1,157 @@
+/* ***************** utilities & containers ***************** */
+
+.container {
+  max-width: 1528px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ***************** global typography ***************** */
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+
+h2 {
+  font-size:3.75rem;
+  font-weight: 700;
+  margin: 3rem 0 2rem;
+}
+
+
+.team .flex-container h3,
+.plans .flex-container h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+
+.plans .flex-container h4 {
+  font-size: 2.125rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem;
+}
+
+
+.team .flex-container p,
+.plans .flex-container li {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.plans .flex-container p.price {
+  font-size: 1.5rem;
+  color: #0a2463;
+  font-weight: 700;
+}
+
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+
+
+header {
+  background-color: #0a2463;
+  color: #ffffff;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+
+footer {
+  background-color: #0a2463;
+  color: #ffffff;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+footer cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+
+/* ***************** main content ***************** */
+
+/* Use flex-wrap: wrap to make the 4 team member cards wrap into 2 rows when the container width is limited. This prevents card overflow and adheres to the required 4-column layout design. */
+
+.team .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+
+
+.team .flex-container > section {
+  flex: 0 0 calc(50% - 1.5rem); /*adjusted gap calculation*/
+  background-color: #F5F5F5;
+  padding: 2rem; /* space for large avatars */
+  border-radius: .25rem;
+  display: flex;
+  align-items: flex-start; /*align avatar/text to top */
+  gap: 2rem; /*more space between avatar and text */
+}
+
+
+.team .flex-container img {
+  width: 12.5rem; /*core size change */
+  height: 12.5rem; /* core size change */
+  border-radius: 50%; /* Keeps avatar circular (unchanged) */
+  object-fit: cover; /* Prevents image distortion (unchanged) */
+  flex-shrink: 0; /* ADDED: Stops avatar from shrinking */
+}
+
+.plans .flex-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+/* Set flex-direction: column to stack content (title, features, price) vertically in each service plan card. Margin-top: auto on the .price class pushes the price to the card bottom, ensuring consistent alignment even with different content heights. */
+
+.plans .flex-container > section {
+  flex: 0 0 calc(33.333% - 1.333rem);
+  background-color: #c4c4c4;
+  padding: 2rem;
+  border-radius: .25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.plans .flex-container p.price {
+  margin-top: auto; /* Pushes price to bottom of card (unchanged) */
+  text-align: center; /* Centers price text (consistent with design) */
+}
+
+
+.plans .flex-container ul {
+  list-style-type: disc; /* Adds bullet points to list items */
+  padding-left: 1.2rem; /* Indents list for left alignment */
+  margin: 1rem 0;
+  align-self: flex-start; /* Aligns entire list to the left of the card */
+}
+
+.plans .flex-container li {
+  margin: 0.5rem 0;
+}
+
+
+
